@@ -1,5 +1,8 @@
-export const homeController = (req, res) =>
-  res.render("home", { pageTitle: "Home" });
+import { videos } from "../db";
+
+export const homeController = (req, res) => {
+  res.render("home", { pageTitle: "Home", videos });
+};
 
 export const searchController = (req, res) => {
   //   const searchingBy = req.query.term;
@@ -7,7 +10,7 @@ export const searchController = (req, res) => {
     query: { term: searchingBy },
   } = req;
 
-  res.render("search", { pageTitle: "Search", searchingBy });
+  res.render("search", { pageTitle: "Search", searchingBy, videos });
 };
 
 export const videosController = (req, res) =>

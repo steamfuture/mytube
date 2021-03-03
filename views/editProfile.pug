@@ -2,10 +2,10 @@ extends layouts/main
 
 block content
     .form-container
-        form(action=routes.editProfile, method="post") 
+        form(action=`/users${routes.editProfile}`, method="post") 
             label(for="avatar")  Avatar
             input(type="file", id="avatar", name="avatar")
             input(type="text", placeholder="Name")
             input(type="email", placeholder="Email", name="email")
-            input(type="submit", vlaue="Update Profile")
-        a.form-cantainer__link(href=routes.changePassword) Change Password
+            input(type="submit", value="Update Profile")
+        a.form-cantainer__link(href=`/users${routes.changePassword}`) Change Password

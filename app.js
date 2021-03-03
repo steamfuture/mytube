@@ -18,6 +18,13 @@ app.use(bodyParser.urlencoded({ extended: true })); // form데이터를 서버�
 app.use(morgan("dev")); // 로그기록
 
 app.use(localsMiddleware);
+app.use(function (req, res, next) {
+  res.setHeader(
+    "Content-Security-Policy",
+    "script-src 'self' https://archive.org"
+  );
+  return next();
+});
 
 app.use(routes.home, globalRouter);
 app.use(routes.users, userRouter);
