@@ -28,8 +28,10 @@ export const postLoginController = (req, res) => {
   res.render("login", { pageTitle: "Login" });
 };
 
-export const logoutController = (req, res) =>
-  res.render("logout", { pageTitle: "Logout" });
+export const logoutController = (req, res) => {
+  // To Do: Process Log Out
+  res.redirect(routes.home);
+};
 
 export const usersController = (req, res) =>
   res.render("users", { pageTitle: "Users" });
